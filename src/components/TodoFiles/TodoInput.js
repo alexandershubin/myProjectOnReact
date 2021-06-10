@@ -22,6 +22,7 @@ export const TodoInput = props => {
              value={value}
              placeholder="добавить задачу"
              onChange={onChangeValue}
+             autoFocus
              type="text"/>
       <button className="btn btn-success form-todo__btn">Добавить</button>
     </form>
