@@ -1,11 +1,9 @@
 import React, {useRef} from "react";
 import {useDrag, useDrop} from "react-dnd";
-import {ItemTypes} from "../ItemTypes";
+import {ItemTypes} from "../../utils/ItemTypes";
+import {addItems} from "./TodoList";
 
 export const TodoItems = props => {
-  const {id, title, index, moveCard, todo} = props;
-  const spanClasses = todo.completed ? "list-item__content throw" : "list-item__content";
-  console.log(todo.date);
   const ref = useRef(null);
 
   const [{handlerId}, drop] = useDrop({
@@ -58,6 +56,9 @@ export const TodoItems = props => {
   const opacity = isDragging ? 0 : 1;
   drag(drop(ref));
 
+  const {id, index, moveCard, todo} = props;
+  const spanClasses = todo.completed ? "list-item__content throw" : "list-item__content";
+
   return (
     <li className="list-group-item list-item"
         ref={ref} style={{opacity}}
@@ -70,7 +71,7 @@ export const TodoItems = props => {
         />
         <strong>{index + 1}.</strong>
         <div className={spanClasses}>
-          <span className="list-item__text">{title}</span>
+          <span className="list-item__text">{todo.title}</span>
           <span className={"list-item__date"}>дата создания: <time>{todo.date}</time></span>
         </div>
       </div>

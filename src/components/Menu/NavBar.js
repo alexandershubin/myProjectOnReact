@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import {NavBarList} from "./NavBarList";
-import {generateID} from "../TodoFiles/Todo";
+import {generateID} from "../../utils/common";
 
 export const NavBar = () => {
-  const [open, setOpen] = useState(false)
-  const [menu, setMenu] = useState([
+  const [open, setOpen] = useState(false);
+  const menu = [
     {
       title: 'Главная',
       link: '/',
@@ -16,11 +16,11 @@ export const NavBar = () => {
       id: generateID(),
     },
     {
-      title: 'Что то еше',
+      title: 'Tomato timer',
       link: 'xz',
       id: generateID(),
-    }
-  ]);
+    },
+  ];
 
   return (
     <div className="menu">

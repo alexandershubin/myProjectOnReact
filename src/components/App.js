@@ -1,8 +1,8 @@
 import React from "react";
 import {Home} from "./Home/Home";
 import {Route, Switch} from "react-router-dom";
-import {NavBar} from "./NavBar/NavBar";
-import {Todo} from "./TodoFiles/Todo";
+import {NavBar} from "./Menu/NavBar";
+import {Todo} from "./Todo/Todo";
 import {Xz} from "./Xz/Xz";
 
 function App() {

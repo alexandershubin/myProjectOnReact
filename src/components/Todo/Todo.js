@@ -4,10 +4,7 @@ import {TodoInput} from "./TodoInput";
 import update from "immutability-helper";
 import {HTML5Backend} from "react-dnd-html5-backend";
 import {DndProvider} from "react-dnd";
-
-export const generateID = () => {
-  return '_' + Math.random().toString(36).substr(2, 9);
-}
+import {generateID} from "../../utils/common";
 
 export const Todo = () => {
   const [todos, setTodos] = useState(JSON.parse(localStorage.getItem('todos')) || []);
@@ -34,7 +31,8 @@ export const Todo = () => {
       title,
       completed: false,
       id: generateID(),
-      date: formatDate(new Date()),
+      index: Date.parse(new Date()),
+      date: formatDate(new Date())
     }]))
   }
 
